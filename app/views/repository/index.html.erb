@@ -1,0 +1,46 @@
+<div class="container p-3 my-3">
+  <div>
+    <%= form_tag '', method: "get", remote: true do %>
+      <div class="form-group">
+        <%= label_tag 'Search Repository' %>
+        <%= text_field_tag 'search', '', class: 'form-control search-text'  %>
+      </div>
+      <br/>
+      <%= submit_tag "Search", id: 'search-btn', class: 'repo-search btn btn-outline-success' %>
+    <% end %>
+  </div>
+
+  <div class='update-repository my-3'>
+  <div class="spinner">
+    <i class='fa fa-spinner fa-spin fa-2x'></i>
+    <p>&nbsp;&nbsp;Please Wait ...</p>
+  </div>
+  <table id="repository-table" class="table table-bordered dt-responsive" cellspacing="0">
+    <thead>
+        <tr>
+          <th>Repository</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+
+<style>
+div.dataTables_wrapper {
+  width: 100% !important;
+}
+.search-text{
+  width: 60%;
+}
+.spinner{
+  display: none;
+  position: absolute;
+  top: 23%;
+  left: 50%;
+}
+
+table { position: relative; } 
+</style>
